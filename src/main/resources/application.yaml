@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: ReactiveSwaggerUI
+
+server:
+  port: 8080
