@@ -1,5 +1,6 @@
 package net.learning.ReactiveSwaggerUI.controller;
 
+import jakarta.validation.Valid;
 import net.learning.ReactiveSwaggerUI.controller.dto.SampleRequest;
 import net.learning.ReactiveSwaggerUI.controller.dto.SuccessSampleResponse;
 import net.learning.ReactiveSwaggerUI.swagger.SubmitDocumentContract;
@@ -20,7 +21,7 @@ public class SampleAPIConroller {
     @PostMapping("/project")
     @ResponseStatus(HttpStatus.ACCEPTED)
     public Mono<SuccessSampleResponse> submitImportDocument(
-            @RequestBody SampleRequest requestPayload,
+            @RequestBody @Valid SampleRequest requestPayload,
             @RequestHeader("HeaderField1") String headerField1, @RequestHeader("HeaderField2") String headerField2) {
 
         return Mono.just(new SuccessSampleResponse());
